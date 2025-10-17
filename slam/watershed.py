@@ -294,7 +294,7 @@ def watershed(mesh, voronoi, dpf, thresh_dist, thresh_ridge,
                                 basins[label_i]['pit_index'],
                                 basins[label_j]['pit_index'])
                             if v < thresh_dist:
-                                # print('merging of',label_j,'into',label_i)
+                                print('merging of',label_j,'into',label_i)
                                 merging = 1
                                 # Update vertex
                                 vert_label[
@@ -379,7 +379,7 @@ def watershed(mesh, voronoi, dpf, thresh_dist, thresh_ridge,
             # Parent basin: the one sharing the largest border
             parent_basin = np.min(neigh_basins[np.argmax(ridges_length)])
 
-            # print('merging of', basin, 'into', int(parent_basin))
+            print('merging of', basin, 'into', int(parent_basin))
 
             # Update vertex
             vert_label[np.where(vert_label == basin)[0]] = parent_basin
